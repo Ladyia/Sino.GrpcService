@@ -1,7 +1,8 @@
 {
   "version": "1.0.0-*",
   "buildOptions": {
-    "emitEntryPoint": true
+    "emitEntryPoint": true,
+    "copyToOutput": [ "server.crt", "server.key", "appSettings.json", "appSettings.*.json" ]
   },
 
   "dependencies": {
@@ -16,7 +17,10 @@
 
   "frameworks": {
     "netcoreapp1.0": {
-      "imports": [ "dnxcore50","net452" ]
+      "imports": [ "dnxcore50", "net452" ]
     }
+  },
+  "publishOptions": {
+    "include": [ "server.crt", "server.key", "appSettings.json", "appSettings.*.json" ]
   }
 }

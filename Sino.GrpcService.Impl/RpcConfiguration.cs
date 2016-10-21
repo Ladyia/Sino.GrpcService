@@ -23,8 +23,8 @@ namespace Sino.GrpcService.Impl
             builder.RegisterAssemblyTypes(typeof(IDataContext).GetTypeInfo().Assembly).Where(t => t.Name.EndsWith("Repository")).AsImplementedInterfaces();
 
             _container = builder.Build();
-            var servercert = File.ReadAllText(@"G:\\ssl\\server.crt");
-            var serverkey = File.ReadAllText(@"G:\\ssl\\server.key");
+            var servercert = File.ReadAllText(@"server.crt");
+            var serverkey = File.ReadAllText(@"server.key");
             var keypair = new KeyCertificatePair(servercert, serverkey);
             var sslCredentials = new SslServerCredentials(new List<KeyCertificatePair>() { keypair });
             _server = new Server
