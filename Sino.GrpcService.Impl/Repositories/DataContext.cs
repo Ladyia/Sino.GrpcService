@@ -10,7 +10,7 @@ namespace Sino.GrpcService.Repositories
         public DataContext(IConfigurationRoot config)
         {
             var client = new MongoClient(config.GetConnectionString("mongodb"));
-            Database = client.GetDatabase("TMSystemVNextDb");
+            Database = client.GetDatabase("aSQ0cWkEshl8NiVn");
         }
     }
 }
