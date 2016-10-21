@@ -9,4 +9,4 @@ RUN dotnet build
 
 EXPOSE 9007
 
-CMD ["dotnet","Sino.GrpcService.Host.dll"]
+CMD dotnet Sino.GrpcService.Host.dll
