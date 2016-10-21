@@ -1,0 +1,16 @@
+{
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Google.Protobuf": "3.1.0",
+    "Grpc.Core": "1.0.1-pre1",
+    "NETStandard.Library": "1.6.0",
+    "Sino.GrpcService.Protocol": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
