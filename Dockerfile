@@ -1,14 +1,14 @@
-FROM microsoft/dotnet:1.0.0-core
+FROM microsoft/dotnet
 
-RUN cd /usr/local/src
+ADD ./ /usr/local/src
+WORKDIR /usr/local/src/Sino.GrpcService.Host/
 
-RUN mkdir GrpcService
+#RUN cd /usr/local/src/
+#RUN dotnet restore
 
-COPY * ./
-
-WORKDIR /usr/local/src/GrpcServic/Sino.GrpcService.Host
+#RUN cd /usr/local/src/Sino.GrpcService.Host/
+#RUN dotnet build
 
 EXPOSE 9007
 
-CMD ["dotnet","restore"]
 CMD ["dotnet","run"]
