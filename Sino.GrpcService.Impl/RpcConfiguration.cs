@@ -33,6 +33,7 @@ namespace Sino.GrpcService.Impl
                 Ports = { new ServerPort("0.0.0.0", 9007, sslCredentials) }
             };
             _server.Start();
+            _server.ShutdownTask.Wait();
         }
 
         public static void Stop()

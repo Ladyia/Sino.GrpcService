@@ -20,9 +20,8 @@ namespace Sino.GrpcService.Host
                 .AddJsonFile($"appSettings.{envName}.json")
                 .Build();
 
-            RpcConfiguration.Start(config);
             Console.WriteLine("service start");
-            Console.ReadKey();
+            RpcConfiguration.Start(config);
             RpcConfiguration.Stop();
         }
     }
