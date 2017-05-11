@@ -30,7 +30,7 @@ namespace Sino.GrpcService.Impl
             _server = new Server
             {
                 Services = { MsgService.BindService(new MsgServiceImpl()) },
-                Ports = { new ServerPort("192.168.0.44", 9007, sslCredentials) }
+                Ports = { new ServerPort("0.0.0.0", 9007, sslCredentials) }
             };
             _server.Start();
             _server.ShutdownTask.Wait();
