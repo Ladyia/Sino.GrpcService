@@ -19,8 +19,8 @@ namespace Sino.GrpcService.Impl
             var builder = new ContainerBuilder();
 
             builder.RegisterInstance(config).As<IConfigurationRoot>();
-            builder.RegisterInstance(new DataContext(config)).As<IDataContext>();
-            builder.RegisterAssemblyTypes(typeof(IDataContext).GetTypeInfo().Assembly).Where(t => t.Name.EndsWith("Repository")).AsImplementedInterfaces();
+            //builder.RegisterInstance(new DataContext(config)).As<IDataContext>();
+            //builder.RegisterAssemblyTypes(typeof(IDataContext).GetTypeInfo().Assembly).Where(t => t.Name.EndsWith("Repository")).AsImplementedInterfaces();
 
             _container = builder.Build();
             var servercert = File.ReadAllText(@"server.crt");
@@ -29,8 +29,8 @@ namespace Sino.GrpcService.Impl
             var sslCredentials = new SslServerCredentials(new List<KeyCertificatePair>() { keypair });
             _server = new Server
             {
-                Services = { MsgService.BindService(new MsgServiceImpl(_container.Resolve<IMsgRepository>())) },
-                Ports = { new ServerPort("0.0.0.0", 9007, sslCredentials) }
+                Services = { MsgService.BindService(new MsgServiceImpl()) },
+                Ports = { new ServerPort("192.168.0.44", 9007, sslCredentials) }
             };
             _server.Start();
             _server.ShutdownTask.Wait();

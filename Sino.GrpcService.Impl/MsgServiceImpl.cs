@@ -10,23 +10,22 @@ namespace Sino.GrpcService
     {
         private IMsgRepository _msgRepository;
 
-        public MsgServiceImpl(IMsgRepository msgRepository)
+        public MsgServiceImpl()
         {
-            _msgRepository = msgRepository;
         }
 
         public override async Task<GetMsgListReply> GetList(GetMsgListRequest request, ServerCallContext context)
         {
             var result = new GetMsgListReply();
-            var list = await _msgRepository.GetList(request.UserId, request.Title, request.StartTime, request.EndTime);
-            result.IsSuccess = true;
-            result.Items.AddRange(list.Select(x => new GetMsgListReply.Types.MsgItem
-            {
-                UserId = x.UserId,
-                Title = x.Title,
-                Time = x.Time,
-                Content = x.Content
-            }).ToList());
+            //var list = await _msgRepository.GetList(request.UserId, request.Title, request.StartTime, request.EndTime);
+            //result.IsSuccess = true;
+            //result.Items.AddRange(list.Select(x => new GetMsgListReply.Types.MsgItem
+            //{
+            //    UserId = x.UserId,
+            //    Title = x.Title,
+            //    Time = x.Time,
+            //    Content = x.Content
+            //}).ToList());
             return result;
         }
 
