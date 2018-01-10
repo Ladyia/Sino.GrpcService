@@ -1,4 +1,4 @@
-FROM microsoft/dotnet
+FROM microsoft/dotnet:1.0-sdk-projectjson
 
 ADD ./ /usr/local/src
 WORKDIR /usr/local/src/Sino.GrpcService.Host/
