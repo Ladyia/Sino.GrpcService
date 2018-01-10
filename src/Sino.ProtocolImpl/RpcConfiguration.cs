@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using Grpc.Core;
+using Grpc.HealthCheck;
 using Microsoft.Extensions.Configuration;
 using Sino.GrpcService.Repositories;
 using System.Collections.Generic;
@@ -27,12 +28,14 @@ namespace Sino.GrpcService.Impl
             var serverkey = File.ReadAllText(@"server.key");
             var keypair = new KeyCertificatePair(servercert, serverkey);
             var sslCredentials = new SslServerCredentials(new List<KeyCertificatePair>() { keypair });
+            var healthService = new HealthServiceImpl();
             _server = new Server
             {
-                Services = { MsgService.BindService(new MsgServiceImpl()) },
+                Services = { MsgService.BindService(new MsgServiceImpl()), Grpc.Health.V1.Health.BindService(healthService) },
                 Ports = { new ServerPort("0.0.0.0", 9007, sslCredentials) }
             };
             _server.Start();
+            healthService.SetStatus("Demo", Grpc.Health.V1.HealthCheckResponse.Types.ServingStatus.Serving);
             _server.ShutdownTask.Wait();
         }
 
