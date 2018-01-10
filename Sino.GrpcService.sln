@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.GrpcService.Host", "Sino.GrpcService.Host\Sino.GrpcService.Host.xproj", "{08E2D354-317F-4CC3-AE2E-7045357C524A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sino.GrpcService.Host", "Sino.GrpcService.Host\Sino.GrpcService.Host.csproj", "{08E2D354-317F-4CC3-AE2E-7045357C524A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.GrpcService.Protocol", "Sino.GrpcService.Protocol\Sino.GrpcService.Protocol.xproj", "{FE06312D-62DA-4C48-B42E-74C2792B8046}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sino.GrpcService.Protocol", "Sino.GrpcService.Protocol\Sino.GrpcService.Protocol.csproj", "{FE06312D-62DA-4C48-B42E-74C2792B8046}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Sino.GrpcService.Impl", "Sino.GrpcService.Impl\Sino.GrpcService.Impl.xproj", "{3FD9DCE0-7BEF-4C14-8DC9-A4505B8B5FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sino.GrpcService.Impl", "Sino.GrpcService.Impl\Sino.GrpcService.Impl.csproj", "{3FD9DCE0-7BEF-4C14-8DC9-A4505B8B5FC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7ED11C9-968A-4B31-B52F-DC03F3ECE11A}
 	EndGlobalSection
 EndGlobal
